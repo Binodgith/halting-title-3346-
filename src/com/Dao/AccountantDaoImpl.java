@@ -1,10 +1,24 @@
 package com.Dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.Exception.AccountantException;
+import com.Exception.CustomerException;
+import com.Exception.TransactionException;
+import com.Model.Customer;
+import com.Model.Transaction;
+import com.utility.DBUtil;
+
 public class AccountantDaoImpl implements AccountantDao {
 	
 
 	@Override
-	public boolean AccountantLogin(String email, int Password) throws AccountantException {
+	public boolean AccountantLogin(String email, int Password) {
 		boolean t = false;
 		try (Connection conn = DBUtil.provideConnection()) {
 
@@ -25,9 +39,8 @@ public class AccountantDaoImpl implements AccountantDao {
 		return t;
 	}
 
-	@Override
-	public int AddCustomer(String name, String email, int password, int AccoNo, int balance)
-			throws CustomerException {
+
+	public int AddCustomer(String name, String email, int password, int AccoNo, int balance) throws CustomerException {
 
 		int i = 0;
 		try (Connection conn = DBUtil.provideConnection()) {
@@ -53,7 +66,6 @@ public class AccountantDaoImpl implements AccountantDao {
 		return i;
 	}
 
-	@Override
 	public int UpdateExistingCustomer(String name, String email, int password, int AccountNo, int Balance,
 			int Customer_Id) throws CustomerException {
 	
