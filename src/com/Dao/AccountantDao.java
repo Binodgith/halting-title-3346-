@@ -1,7 +1,6 @@
 package com.Dao;
 
 import java.util.List;
-
 import com.Exception.AccountantException;
 import com.Exception.CustomerException;
 import com.Exception.TransactionException;
@@ -11,7 +10,7 @@ import com.Model.Transaction;
 public interface AccountantDao {
 
 	//Login using his/her email and password
-	public boolean AccountantLogin(String Username,int Password ) ;
+	public boolean AccountantLogin(String Username,int Password ) throws AccountantException ;
 	
 	//Adding new account for customer
 	public int AddCustomer(String name,String username, int password,int AccoNo,int Amount) throws CustomerException;
