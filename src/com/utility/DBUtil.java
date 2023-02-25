@@ -17,10 +17,10 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 		
-		String url = "jdbc:mysql://localhost:3306/bank_project";
+		String url = "jdbc:mysql://localhost:3306/banking_system";
 		
 		try {
-			conn = DriverManager.getConnection(url,"root","root");
+			conn = DriverManager.getConnection(url,"root","admin");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
